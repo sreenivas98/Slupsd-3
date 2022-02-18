@@ -4,6 +4,7 @@ from create_location import Create_location
 from greathall import Great_hall
 from courtYard import CourtYard
 from action import action
+from Narrator import Narrate
 
  #Create Places
 Castle_Moore=Create_location('Castle_Moore','GreatHall')
@@ -20,32 +21,32 @@ Sword2=item('Sword2','Sword','Blacksmith.Table.Right')
 Sword3=item('Sword3','Sword','Blacksmith.Table.FrontLeft')
 Sword4=item('Sword4','Sword','Blacksmith.Table.FrontRight')
 
-#Create Items for Alchemy Shop
-SpellBook=item('SpellBook','SpellBook','Alchemy.AlchemistTable.Center')
-BluePotion=item('BluePotion','BluePotion','Alchemy.AlchemistTable.Left')
-RedPotion=item('RedPotion','RedPotion','Alchemy.AlchemistTable.Right')
-RedBook=item('RedBook','RedBook','Alchemy.Bookshelf.Left')
-GreenBook=item('GreenBook','GreenBook','Alchemy.Bookshelf.Right')
-EvilBook=item('EvilBook','EvilBook','Alchemy.Table.Left')
-PurpleBook=item('PurpleBook','PurpleBook','Alchemy.Table.Right')
-PurplePotion=item('PurplePotion','PurplePotion','Alchemy.Table.FrontLeft')
-GreenPotion=item('GreenPotion','GreenPotion','Alchemy.Table.FrontRight')
-Scroll=item('Scroll','Scroll','Alchemy.Table.BackLeft')
-OpenScroll=item('OpenScroll','OpenScroll','Alchemy.Table.BackRight')
-BlueCloth=item('BlueCloth','BlueCloth','Alchemy.Bar.Behind')
-Cup=item('Cup','Cup','Alchemy.Bar.Left')
-Bottle=item('Bottle','Bottle','Alchemy.Bar.Center')
-Bottle2=item('Bottle2','Bottle','Alchemy.Bar.Right')
+# #Create Items for Alchemy Shop
+# SpellBook=item('SpellBook','SpellBook','Alchemy.AlchemistTable.Center')
+# BluePotion=item('BluePotion','BluePotion','Alchemy.AlchemistTable.Left')
+# RedPotion=item('RedPotion','RedPotion','Alchemy.AlchemistTable.Right')
+# RedBook=item('RedBook','RedBook','Alchemy.Bookshelf.Left')
+# GreenBook=item('GreenBook','GreenBook','Alchemy.Bookshelf.Right')
+# EvilBook=item('EvilBook','EvilBook','Alchemy.Table.Left')
+# PurpleBook=item('PurpleBook','PurpleBook','Alchemy.Table.Right')
+# PurplePotion=item('PurplePotion','PurplePotion','Alchemy.Table.FrontLeft')
+# GreenPotion=item('GreenPotion','GreenPotion','Alchemy.Table.FrontRight')
+# Scroll=item('Scroll','Scroll','Alchemy.Table.BackLeft')
+# OpenScroll=item('OpenScroll','OpenScroll','Alchemy.Table.BackRight')
+# BlueCloth=item('BlueCloth','BlueCloth','Alchemy.Bar.Behind')
+# #Cup2=item('Cup2','Cup','Alchemy.Bar.Left')
+# Bottle=item('Bottle','Bottle','Alchemy.Bar.Center')
+# Bottle2=item('Bottle2','Bottle','Alchemy.Bar.Right')
 
-#Create Items for Dungeon
-ChickenLeg=item('ChickenLeg','ChickenLeg','Dungeon.Table.Left')
-Bread=item('Bread','Bread','Dungeon.Table.Right')
-OpenScroll2=item('OpenScroll2','OpenScroll','Dungeon.Table.FrontLeft')
-Drink=item('Drink','Bottle','Dungeon.Table.BackLeft')
-InkandQuill=item('InkandQuill','InkandQuill','Dungeon.Table.FrontRight')
-Sword_vill=item('Sword_vill','Sword','Dungeon.Table.BackRight')
-Rags=item('Rags','Rags','Dungeon.Bookshelf.Left')
-Scroll_dung=item('Scroll_dung','Scroll','Dungeon.Bookshelf.Right')
+# #Create Items for Dungeon
+# ChickenLeg=item('ChickenLeg','ChickenLeg','Dungeon.Table.Left')
+# Bread=item('Bread','Bread','Dungeon.Table.Right')
+# OpenScroll2=item('OpenScroll2','OpenScroll','Dungeon.Table.FrontLeft')
+# Drink=item('Drink','Bottle','Dungeon.Table.BackLeft')
+# InkandQuill=item('InkandQuill','InkandQuill','Dungeon.Table.FrontRight')
+# Sword_vill=item('Sword_vill','Sword','Dungeon.Table.BackRight')
+# Rags=item('Rags','Rags','Dungeon.Bookshelf.Left')
+# Scroll_dung=item('Scroll_dung','Scroll','Dungeon.Bookshelf.Right')
 
 #Create Items for Court Yard
 RedCloth=item('RedCloth','RedCloth','Moore_Courtyard.BigStall.Left')
@@ -71,6 +72,9 @@ while(True):
 		action('HideMenu()')
 		action('EnableInput()')
 		action('FadeOut()')
+		Narrate('Welcome to "The Kidnapping in Moore City"')
+		action('Wait(3)')
+		Narrate.Hide_Narration()
 		Great_hall(King_Jonathan,Harry,Castle_Moore)
 		CourtYard(Harry,Moore_Courtyard)
 
