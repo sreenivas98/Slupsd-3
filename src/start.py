@@ -76,6 +76,6 @@ while(True):
 		action('Wait(3)')
 		Narrate.Hide_Narration()
 		Great_hall(King_Jonathan,Harry,Castle_Moore)
-		CourtYard(Harry,Moore_Courtyard)
+		#CourtYard(Harry,Moore_Courtyard)
 
 

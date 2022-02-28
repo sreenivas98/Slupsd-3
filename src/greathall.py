@@ -18,7 +18,7 @@ guard4=Create_Character('guard4','D','HeavyArmour','Short_Full','neutral')
 guard5=Create_Character('guard5','E','HeavyArmour','Long','neutral')
 guard6=Create_Character('guard6','F','HeavyArmour','Short_Full','neutral')
 
-def Great_hall(Char1,Char2,Place1):
+def Great_hall(Char1,Char2,Place1,flag=True):
     Narrate('Entering into Throne room')
     action('SetPosition('+Char1.name+','+Place1.name+'.Throne)')
     action('SetPosition('+guard1.name+','+Place1.name+'.RightBalcony)')
@@ -33,7 +33,10 @@ def Great_hall(Char1,Char2,Place1):
     action('EnableIcon("Enter",exit,'+Place1.name+'.BasementDoor,"Enter Storage",true)')
     Narrate.Hide_Narration()
     action('FadeIn()')
-    action('Enter('+Char2.name+','+Place1.name+'.Gate)')
+    if flag==True:
+        action('Enter('+Char2.name+','+Place1.name+'.Gate)')
+    else:
+        action('Enter('+Char2.name+','+Place1.name+'.BasementDoor)')
     action('SetCameraFocus('+Char2.name+')')
     action('SetCameraMode(follow)')
     action('EnableInput()')
@@ -58,7 +61,7 @@ def Great_hall(Char1,Char2,Place1):
            #action('OpenFurniture('+Char2.name+', '+Place1.name+'.Gate)')
            action('Exit('+Char2.name+', '+Place1.name+'.Gate)')
            action('FadeOut()')
-           return
+           Narrate('To Be Continued....')
        elif i == 'input Enter Castle_Moore.BasementDoor':
            action('Exit('+Char2.name+', '+Place1.name+'.BasementDoor)')
            action('FadeOut()')
@@ -76,7 +79,7 @@ def Great_hall(Char1,Char2,Place1):
                 if i == 'input Exit Storage.Door':
                     action('Exit('+Char2.name+', '+Storage.name+'.Door)')
                     action('FadeOut()')
-                    Great_hall(Char1,Char2,Place1)
+                    Great_hall(Char1,Char2,Place1,False)
 
 
 
