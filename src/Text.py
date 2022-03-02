@@ -1,4 +1,5 @@
 from action import action
+#class for creating dialogs
 
 class Text:
     def __init__(self,Name,dialogue):
