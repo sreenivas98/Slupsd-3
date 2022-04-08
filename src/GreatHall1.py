@@ -1,5 +1,7 @@
 from location import *
 from CreateCharacters import *
+from action import action
+from Narrator import Narrate
 
 def Great_hall():
     Narrate('Entering into Throne room')
