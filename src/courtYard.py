@@ -1,4 +1,3 @@
-from tracemalloc import start
 from action import action
 from create_Character import Create_Character
 from Narrator import Narrate
