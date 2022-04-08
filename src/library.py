@@ -1,5 +1,5 @@
-from Location import *
-from CreateCharacter import *
+from location import *
+from CreateCharacters import *
 from action import action
 
 
