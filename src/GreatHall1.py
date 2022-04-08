@@ -1,4 +1,4 @@
-from Locations import *
+from location import *
 from CreateCharacters import *
 
 def Great_hall():
