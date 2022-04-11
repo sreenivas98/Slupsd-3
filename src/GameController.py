@@ -1,4 +1,4 @@
-from Locations import *
+from location import *
 from CreateCharacters import *
 from action import action
 from Text import Text
@@ -7,7 +7,7 @@ from GreatHall1 import *
 from GreatHall2 import *
 from PlaceCity import *
 from CourtYard2 import *
-from PlaceLibrary import *
+from library import *
 
 
 def showMenu():
@@ -89,7 +89,7 @@ def main():
            
         elif received == 'input Exit Castle_Moore.Gate':
            #action('OpenFurniture('+Char2.name+', '+Place1.name+'.Gate)')
-           action('WalkTo('+Harry.name+',)')
+           action('WalkTo('+Harry.name+','+Castle_Moore.name+'.Gate)')
            action('Exit('+Harry.name+', '+Castle_Moore.name+'.Gate)')
            action('FadeOut()')
            CourtYard()
@@ -146,37 +146,31 @@ def main():
             action('SetRight(null)')
             action('DisableIcon("Talk",'+Librarian.name+')')
             action('WalkTo('+Librarian.name+','+Library.name+'.AlchemistTable.Left)')
-            # action('Pickup('+Librarian.name+','+Scroll2.name+','+Library.name+'.AlchemistTable.Left)')
+            action('Pickup('+Librarian.name+',Scroll,'+Library.name+'.AlchemistTable.Left)')
             action('WalkTo('+Librarian.name+','+Harry.name+')')
-            # action('Give('+Librarian.name+','+Scroll2+','+Harry.name+')')
-            action('SetLeft('+Librarian.name+')')
-            action('SetRight('+Harry.name+')')
-            action('SetExpression('+Librarian.name+',neutral)')
-            Text(Librarian.name, "Palpatine used to be a farmer and a respected person in this village.")
-            Text(Librarian.name,"But! due to his greed he tried to steal gold coins from the king and got banished from this kingdom.")
-            Text(Librarian.name, "Now he lives in a dungeon at the city outskirts. You will have to cross a Spooky path with thorns to each the dungeon.")
-            Text(Librarian.name,"One more thing\, The Spooky path is guarded by the Gollum\, a very powerful man in this kingdom.")
-            Text(Harry.name,"Thank you for the information.")
-            action('SetLeft(null)')
-            action('SetRight(null)')
+            action('Give('+Librarian.name+',Scroll,'+Harry.name+')')
+            action('AddToList(Scroll,"Scroll - contains information about Palpatine")')
+            action('ShowList('+Harry.name+')')
             action('EnableInput()')
-            # action('')
-            # action('FadeOut()')
-        
 
-# while(True):
-	# i = input()
-	# if i == 'input Selected Start':
-		# action('HideMenu()')
-		# action('EnableInput()')
-		# action('FadeOut()')
-		# Narrate('Welcome to "The Kidnapping in Moore City"')
-		# action('Wait(3)')
-		# Narrate.Hide_Narration()
-		# Great_hall()
-		# CourtYard(Harry,Moore_Courtyard)
-        
-  
-# Main Function starts here  
+        elif received == 'input Pick GoldBag':
+            action('DisableInput()')
+            action('WalkTo('+Harry.name+','+Storage.name+'.Shelf)')
+            action('Pickup('+Harry.name+',GoldBag,'+Storage.name+'.Shelf)')
+            action('AddToList(GoldBag,"Gold coins bag - used to buy weapons from Blacksmith")')
+            action('ShowList('+Harry.name+')')
+            action('EnableInput()')
+            
+        elif received == 'input Pick GoldCup':
+            action('DisableInput()')
+            action('WalkTo('+Harry.name+','+Storage.name+'.Shelf)')
+            action('Pickup('+Harry.name+',GoldCup,'+Storage.name+'.Shelf)')
+            action('AddToList(GoldCup,"Gold Cup - used to buy potions from Alchemist")')
+            action('ShowList('+Harry.name+')')
+            action('EnableInput()')
+            
+        elif received == 'input Close List':
+            action('HideList()')
+
 if __name__ == "__main__":
     main()
