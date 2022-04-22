@@ -1,5 +1,6 @@
 from location import *
 from CreateCharacters import *
+from Items import *
 from action import action
 from Text import Text
 from Narrator import Narrate
@@ -31,6 +32,9 @@ def show_credit():
 def main():
     
     # intializations()
+    create_characters()
+    create_locations()
+    Create_Item()
     action('SetCameraFocus('+Harry.name+')')
     action('SetCameraMode(follow)')
     showMenu()
