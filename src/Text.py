@@ -1,11 +1,14 @@
 from action import action
-#class for creating dialogs
 
 class Text:
-    def __init__(self,Name,dialogue):
-        self.Name=Name
-        self.dialogue=dialogue
+    def setDialog(Name,dialogue):
         action('SetDialog('+Name+' : '+dialogue+')')
+        
+    def setDialog2(msg):
+        action('SetDialog('+msg+')')
+        
+    def showDialog():
         action('ShowDialog()')
-        action('Wait(3)')
+    
+    def hideDialog():
         action('HideDialog()')
