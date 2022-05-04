@@ -1,5 +1,6 @@
 from action import action
 
+# Modified code for text.py
 class Text:
     def setDialog(Name,dialogue):
         action('SetDialog('+Name+' : '+dialogue+')')
